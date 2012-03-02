@@ -1,0 +1,17 @@
+<html>
+<head>
+	<title>Cementery Of Zombies -ERWIN- "Blog"</title>
+</head>
+<body>
+	<a href="{% url home %}" >return</a>
+	<h1>{{ zombie.name_of_zombie}} -> ({{ zombie.tweet.count }}) </h1>
+	<p1>Cemetery of the Zombie: {{ zombie.cemetery_of_zombie}}</p1>
+	<p>
+	{% for tweet in zombie.tweet.all %}
+			<div>
+				Tweet for this Zombie: {{ tweet.state }}   (made in) {{ tweet.created_at }} 
+			</div>
+			{% endfor %}
+	</p>
+</body>
+</html>

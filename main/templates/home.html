@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>Blog ERWIN</title>
+</head>
+<body bgcolor="#507FFF" >
+	<div>
+		<h10>                   Exam 2 made by Erwin Jonnatan Pérez Téllez                     </h10>
+	</div>
+	<hr/>
+	{% for zombie in zombies %}
+	<div>
+		<h3>El Zombie:  {{ zombie.name_of_zombie}} ha hecho: ({{ zombie.tweet.count }}) tweets!!!
+		<a href="{% url show_zombie zombie.id %}">
+		Inside here</a>
+		</h3>
+		<div>Cemetery of the Zombie:  {{ zombie.cemetery_of_zombie }}</div>
+		<div class="Tweet">
+			{% for tweet in zombie.tweet.all %}
+			<div>Tweets:   {{ tweet.state }}         made in:  {{ tweet.created_at }}
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	{% endfor %}
+</body>
+</html>
